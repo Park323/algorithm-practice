@@ -31,7 +31,11 @@ def DFS(i, j, maps):
         return None
 
 def BFS(maps):
-    queue = [(0,0,0)] # (i, j, map, depth)
+    """
+    Map을 유지해주는 게 point.
+    두 갈래 길이 한 점에서 중첩된다면 더 먼 쪽은 버려도 된다.
+    """
+    queue = [(0,0,0)] # (i, j, depth)
     while queue:
         i, j, depth = queue.pop(0)
         if i+1 == len(maps) and j+1 == len(maps[0]):
