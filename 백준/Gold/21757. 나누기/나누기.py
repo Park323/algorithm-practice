@@ -11,10 +11,9 @@ for i, num in enumerate(series, start=1):
 
 def search(idx, anchor, total, accums):
     cnt = 0
-    for i in range(anchor, len(accums)):
-        # print(accums[i], total/idx, total, idx)
+    for i in range(anchor, len(accums)+idx-4):
         if accums[i] == total / 4 * idx:
-            if idx == 4:
+            if idx == 3:
                 cnt += 1
             else:
                 cnt += search(idx+1, i+1, total, accums)
